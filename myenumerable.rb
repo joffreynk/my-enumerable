@@ -1,18 +1,14 @@
-module MyEnumerable 
+module MyEnumerable
   def all?(&block)
     each do |element|
-      if(!block.call(element)) 
-        return false
-      end
+      return false unless block.call(element)
     end
     true
   end
 
   def any?(&block)
     each do |element|
-      if(block.call(element)) 
-        return true
-      end
+      return true if block.call(element)
     end
     false
   end
@@ -20,9 +16,7 @@ module MyEnumerable
   def filter(&block)
     result = []
     each do |element|
-      if(block.call(element)) 
-        result.push(element)
-      end
+      result.push(element) if block.call(element)
     end
     result
   end

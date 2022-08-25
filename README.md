@@ -1,6 +1,5 @@
 # Enumerable
 
-
 > This project is a Enumerable Exercise which test if given array or items you can check if some data passes conditions you are giving it based on data you have
 
 ## Getting Started
