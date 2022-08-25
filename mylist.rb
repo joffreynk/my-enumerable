@@ -1,36 +1,7 @@
-module Myenumerable 
-  def all?(&block)
-    each do |element|
-      if(block.call(element) == false) 
-        return false
-      end
-    end
-    true
-  end
-
-  def any?(&block)
-    each do |element|
-      if(block.call(element) == true) 
-        return true
-      end
-    end
-    false
-  end
-
-  def filter(&block)
-    result = []
-    each do |element|
-      if(block.call(element) == true) 
-        result.push(element)
-      end
-    end
-    result
-  end
-
-end
+require('./myenumerable.rb')
 
 class MyList
-  include Myenumerable
+  include MyEnumerable
   def initialize(list)
     @list = list
   end
@@ -39,7 +10,6 @@ class MyList
     @list.each(&block)
     self
   end
-
 end
 
 list = MyList.new([1, 2, 3, 4])
