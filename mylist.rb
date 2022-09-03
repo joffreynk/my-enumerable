@@ -2,8 +2,8 @@ require_relative('./myenumerable')
 
 class MyList
   include MyEnumerable
-  def initialize(*list)
-    @list = list.flatten
+  def initialize(list)
+    @list = listflatten
   end
 
   def each(&block)
